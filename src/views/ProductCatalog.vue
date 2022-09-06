@@ -4,11 +4,11 @@
       <ProductCard
         v-for="products in productTypes"
         :key="products.id"
-        :cardImageSrc="products.productImage"
-        :brand="products.productBrand"
-        :name="products.productName"
-        :description="products.productDescription"
-        :price="products.productPrice"
+        :cardImageSrc="products.image"
+        :brand="products.title"
+        :name="products.category"
+        :description="products.description"
+        :price="products.price"
       ></ProductCard>
     </div>
   </div>
@@ -25,7 +25,7 @@ export default {
   },
   created() {
     axios
-      .get("http://localhost:3000/productTypes")
+      .get("https://fakestoreapi.com/products")
       .then((response) => (this.productTypes = response.data))
       .catch((error) => console.log(error.response));
   },
