@@ -1,7 +1,6 @@
 <template>
   <div>
-    <p class="text-s">{{ brand }} {{ name }}</p>
-    <p class="font-bold">{{ description }}</p>
+    <p class="text-sm">{{ brand }} {{ name }}</p>
   </div>
 </template>
 

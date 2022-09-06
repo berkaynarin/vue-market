@@ -1,23 +1,15 @@
 <template>
   <div class="px-10">
-    <div
-      class="
-        flex flex-row flex-wrap
-        justify-between
-        gap-8
-        mb-3
-        justify-items-center
-      "
-    >
+    <div class="flex flex-row flex-wrap justify-between gap-8 mb-3">
       <ProductCard
-        v-for="products in productTypes"
-        :key="products.id"
-        :cardImageSrc="products.image"
-        :brand="products.title"
-        :name="products.category"
-        :description="products.description"
-        :price="products.price"
-        class="basis-24"
+        v-for="product in products"
+        :key="product.id"
+        :cardImageSrc="product.image"
+        :brand="product.title"
+        :name="product.category"
+        :description="product.description"
+        :price="product.price"
+        class="basis-12"
       ></ProductCard>
     </div>
   </div>
@@ -29,13 +21,13 @@ import axios from "axios";
 export default {
   data() {
     return {
-      productTypes: [],
+      products: [],
     };
   },
   created() {
     axios
       .get("https://fakestoreapi.com/products")
-      .then((response) => (this.productTypes = response.data))
+      .then((response) => (this.products = response.data))
       .catch((error) => console.log(error.response));
   },
   components: { ProductCard },

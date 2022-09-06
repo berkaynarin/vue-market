@@ -2,10 +2,11 @@
   <div
     class="
       flex flex-col
-      items-center
       border-2 border-gray-50
+      items-center
+      justify-between
       rounded-md
-      w-57.5
+      w-56
       h-110
       p-1.5
       shadow-md
@@ -18,20 +19,17 @@
       </router-link>
       <CardLikeIcon />
     </div>
-    <div class="flex flex-col items-center">
+    <div>
       <CardDescription
         :brand="brand"
         :name="name"
-        :description="description"
         class="line-clamp-2"
       ></CardDescription>
     </div>
-    <div class="justify-self-end">
-      <CardPrice :price="price"></CardPrice>
-      <router-link to="/product">
-        <AddBasketButton></AddBasketButton>
-      </router-link>
-    </div>
+    <CardPrice :price="price"></CardPrice>
+    <router-link to="/product">
+      <AddBasketButton></AddBasketButton>
+    </router-link>
   </div>
 </template>
 
