@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import ProductTitle from "@/components/ProductDetailProductTitle.vue";
+import ProductTitle from "@/components/ProductDetail/ProductTitle.vue";
 import ProductImage from "@/components/ProductDetail/ProductImage.vue";
 import ProductFeatures from "@/components/ProductDetail/ProductFeatures.vue";
 import ProductSize from "@/components/ProductDetail/ProductSize.vue";

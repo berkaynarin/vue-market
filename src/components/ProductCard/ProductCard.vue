@@ -1,6 +1,16 @@
 <template>
   <div
-    class="flex flex-col items-center border-2 border-gray-50 rounded-md w-57.5 h-110 p-1.5 shadow-md hover:shadow-2xl"
+    class="
+      flex flex-col
+      items-center
+      border-2 border-gray-50
+      rounded-md
+      w-57.5
+      h-110
+      p-1.5
+      shadow-md
+      hover:shadow-2xl
+    "
   >
     <div class="flex flex-row-reverse justify-content-center">
       <router-link to="/product">
@@ -24,11 +34,11 @@
 </template>
 
 <script>
-import CardImage from "./Image.vue";
+import CardImage from "./CardImage.vue";
 import CardDescription from "./CardDescription.vue";
-import CardPrice from "./Price.vue";
+import CardPrice from "./CardPrice.vue";
 import AddBasketButton from "./AddBasketButton.vue";
-import CardLikeIcon from "./LikeIcon.vue";
+import CardLikeIcon from "./CardLikeIcon.vue";
 export default {
   props: {
     cardImageSrc: String,
