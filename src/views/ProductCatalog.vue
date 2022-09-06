@@ -19,7 +19,8 @@
 
 <script>
 import ProductCard from "../components/ProductCard/ProductCard.vue";
-import axios from "axios";
+import ProductService from "../services/ProductService.js";
+
 export default {
   data() {
     return {
@@ -27,8 +28,7 @@ export default {
     };
   },
   created() {
-    axios
-      .get("https://fakestoreapi.com/products")
+    ProductService.getProducts()
       .then((response) => (this.products = response.data))
       .catch((error) => console.log(error.response));
   },
