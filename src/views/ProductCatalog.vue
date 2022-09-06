@@ -19,12 +19,14 @@ import ProductCard from "../components/ProductCard/ProductCard.vue";
 import axios from "axios";
 export default {
   data() {
-    return {};
+    return {
+      productTypes: [],
+    };
   },
   created() {
     axios
-      .get("localhost:3000/productTypes")
-      .then((response) => console.log(response.data))
+      .get("http://localhost:3000/productTypes")
+      .then((response) => (this.productTypes = response.data))
       .catch((error) => console.log(error.response));
   },
   components: { ProductCard },
