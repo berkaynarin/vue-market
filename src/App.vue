@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseHeader></BaseHeader>
+    <BaseHeader>Vue Market</BaseHeader>
     <router-view />
   </div>
 </template>

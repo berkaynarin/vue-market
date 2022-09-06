@@ -30,7 +30,7 @@
           ></ProductInventory>
         </div>
         <div class="flex flex-col items-center">
-          <Basket :cart="cart"></Basket>
+          <BaseBasket :cart="cart"></BaseBasket>
         </div>
         <div>
           <ProductReview
@@ -52,7 +52,7 @@ import ProductColors from "@/components/ProductDetail/ProductColors.vue";
 import ProductInventory from "@/components/ProductDetail/ProductInventory.vue";
 import ProductReview from "@/components/ProductDetail/ProductReview.vue";
 import CartButton from "@/components/Basket/CartButton.vue";
-import Basket from "../components/Basket/Basket.vue";
+import BaseBasket from "../components/Basket/BaseBasket.vue";
 
 import axios from "axios";
 
@@ -66,7 +66,7 @@ export default {
     ProductInventory,
     ProductReview,
     CartButton,
-    Basket,
+    BaseBasket,
   },
   data() {
     return {

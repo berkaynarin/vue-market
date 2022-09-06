@@ -1,0 +1,60 @@
+{
+    "productTypes": [
+    {
+        "id": 3,
+        "onSale": false,
+        "productBrand": "Koton",
+        "productName": "T-shirt",
+        "productFeatures": [],
+        "productReview": [],
+        "productDescription": "Stylish",
+        "productPrice": "71.00",
+        "productColor": "Red",
+        "productSize": ["S", "M", "XL", "2XL"],
+        "productImage": "",
+        "buttonBackground": "#990000"
+      },
+    {
+        "id": 3,
+        "onSale": false,
+        "productBrand": "Koton",
+        "productName": "T-shirt",
+        "productFeatures": [],
+        "productReview": [],
+        "productDescription": "Stylish",
+        "productPrice": "71.00",
+        "productColor": "Red",
+        "productSize": ["S", "M", "XL", "2XL"],
+        "productImage": "",
+        "buttonBackground": "#990000"
+      },
+    {
+        "id": 3,
+        "onSale": false,
+        "productBrand": "Koton",
+        "productName": "T-shirt",
+        "productFeatures": [],
+        "productReview": [],
+        "productDescription": "Stylish",
+        "productPrice": "71.00",
+        "productColor": "Red",
+        "productSize": ["S", "M", "XL", "2XL"],
+        "productImage": "",
+        "buttonBackground": "#990000"
+      },
+    {
+      "id": 3,
+      "onSale": false,
+      "productBrand": "Koton",
+      "productName": "T-shirt",
+      "productFeatures": [],
+      "productReview": [],
+      "productDescription": "Stylish",
+      "productPrice": "71.00",
+      "productColor": "Red",
+      "productSize": ["S", "M", "XL", "2XL"],
+      "productImage": "",
+      "buttonBackground": "#990000"
+    }
+  ]
+}
