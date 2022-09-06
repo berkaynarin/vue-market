@@ -14,9 +14,7 @@
     "
   >
     <div class="flex flex-row-reverse justify-content-center">
-      <router-link to="/product">
-        <CardImage :ImageSrc="cardImageSrc" />
-      </router-link>
+      <CardImage :ImageSrc="cardImageSrc" />
       <CardLikeIcon />
     </div>
     <div>
@@ -27,9 +25,7 @@
       ></CardDescription>
     </div>
     <CardPrice :price="price"></CardPrice>
-    <router-link to="/product">
-      <AddBasketButton></AddBasketButton>
-    </router-link>
+    <AddBasketButton></AddBasketButton>
   </div>
 </template>
 
@@ -39,6 +35,7 @@ import CardDescription from "./CardDescription.vue";
 import CardPrice from "./CardPrice.vue";
 import AddBasketButton from "./AddBasketButton.vue";
 import CardLikeIcon from "./CardLikeIcon.vue";
+
 export default {
   props: {
     cardImageSrc: String,
@@ -46,7 +43,9 @@ export default {
     name: String,
     description: String,
     price: String,
+    productId: Number,
   },
+
   components: {
     CardLikeIcon,
     CardImage,
