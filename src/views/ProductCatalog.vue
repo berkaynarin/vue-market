@@ -1,6 +1,14 @@
 <template>
-  <div>
-    <div class="flex flex-row gap-5 mb-3 justify-items-center">
+  <div class="px-10">
+    <div
+      class="
+        flex flex-row flex-wrap
+        justify-between
+        gap-8
+        mb-3
+        justify-items-center
+      "
+    >
       <ProductCard
         v-for="products in productTypes"
         :key="products.id"
@@ -9,6 +17,7 @@
         :name="products.category"
         :description="products.description"
         :price="products.price"
+        class="basis-24"
       ></ProductCard>
     </div>
   </div>

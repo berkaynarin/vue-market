@@ -14,9 +14,9 @@
   >
     <div class="flex flex-row-reverse justify-content-center">
       <router-link to="/product">
-        <CardImage :ImageSrc="cardImageSrc"></CardImage>
+        <CardImage :ImageSrc="cardImageSrc" />
       </router-link>
-      <CardLikeIcon></CardLikeIcon>
+      <CardLikeIcon />
     </div>
     <div class="flex flex-col items-center">
       <CardDescription
@@ -26,10 +26,12 @@
         class="line-clamp-2"
       ></CardDescription>
     </div>
-    <CardPrice :price="price"></CardPrice>
-    <router-link to="/product">
-      <AddBasketButton></AddBasketButton>
-    </router-link>
+    <div class="justify-self-end">
+      <CardPrice :price="price"></CardPrice>
+      <router-link to="/product">
+        <AddBasketButton></AddBasketButton>
+      </router-link>
+    </div>
   </div>
 </template>
 
