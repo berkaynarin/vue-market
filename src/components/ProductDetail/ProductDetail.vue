@@ -1,42 +1,28 @@
 <template>
   <div>
     <div class="flex justify-around px-10">
-      <div class="flex flex-col justify-between basis-1/5">
-        <ProductTitle
-          :brand="brand"
-          :name="name"
-          :description="description"
-        ></ProductTitle>
-        <ProductImage :imgURL="image"></ProductImage>
+      <div class="flex flex-col gap-5 items-center basis-1/5">
+        <ProductTitle :brand="product.title"></ProductTitle>
+        <ProductImage :imgURL="product.image"></ProductImage>
         <CartButton
           @product-add-handle="addProduct"
           @product-remove-handle="removeProduct"
-          v-show="(onSale, inventory)"
+          v-show="onSale"
         ></CartButton>
       </div>
-      <div class="flex flex-col justify-between basis-1/5">
-        <ProductFeatures :materials="getMaterials" />
-        <ProductColors
-          :productTypes="productTypes"
-          :updateView="updateView"
-        ></ProductColors>
+      <div class="flex flex-col basis-1/5">
+        <ProductFeatures :materials="product.description" />
         <ProductSize v-show="onSale" :size="size"></ProductSize>
       </div>
       <div class="flex flex-col justify-between basis-1/5 gap-7">
-        <div>
-          <ProductInventory
-            :inventory="inventory"
-            :onSale="onSale"
-          ></ProductInventory>
-        </div>
-        <div class="flex flex-col items-center">
-          <BaseBasket :cart="cart"></BaseBasket>
-        </div>
         <div>
           <ProductReview
             @addReview="addProductReview"
             :productReview="review"
           />
+        </div>
+        <div class="flex flex-col items-center">
+          <BaseBasket :cart="cart"></BaseBasket>
         </div>
       </div>
     </div>
@@ -48,26 +34,32 @@ import ProductTitle from "@/components/ProductDetail/ProductTitle.vue";
 import ProductImage from "@/components/ProductDetail/ProductImage.vue";
 import ProductFeatures from "@/components/ProductDetail/ProductFeatures.vue";
 import ProductSize from "@/components/ProductDetail/ProductSize.vue";
-import ProductColors from "@/components/ProductDetail/ProductColors.vue";
-import ProductInventory from "@/components/ProductDetail/ProductInventory.vue";
 import ProductReview from "@/components/ProductDetail/ProductReview.vue";
 import CartButton from "@/components/Basket/CartButton.vue";
 import BaseBasket from "../Basket/BaseBasket.vue";
 
+import ProductService from "@/services/ProductService.js";
+
 export default {
+  created() {
+    ProductService.getProductById(this.$route.params.id)
+      .then((response) => (this.product = response.data))
+      .catch((error) => console.log("An error occured: " + error));
+  },
+  data() {
+    return {
+      product: [],
+      onSale: true,
+    };
+  },
   components: {
     ProductTitle,
     ProductImage,
     ProductFeatures,
     ProductSize,
-    ProductColors,
-    ProductInventory,
     ProductReview,
     CartButton,
     BaseBasket,
-  },
-  props: {
-    id: null,
   },
   methods: {
     updateView(index) {

@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h1 class="font-bold">{{ brand }} {{ name }}</h1>
-    <p class="font-semibold">{{ description }}</p>
+    <h1 class="font-bold">{{ brand }}</h1>
   </div>
 </template>
 
@@ -10,7 +9,6 @@ export default {
   props: {
     brand: String,
     name: String,
-    description: String,
   },
 };
 </script>
