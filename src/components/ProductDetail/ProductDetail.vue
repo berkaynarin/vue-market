@@ -10,9 +10,9 @@
           v-show="onSale"
         ></CartButton>
       </div>
-      <div class="flex flex-col basis-1/5">
+      <div class="flex flex-col gap-4 basis-1/5">
         <ProductFeatures :materials="product.description" />
-        <ProductSize v-show="onSale" :size="size"></ProductSize>
+        <ProductPrice :price="product.price" />
       </div>
       <div class="flex flex-col justify-between basis-1/5 gap-7">
         <div>
@@ -33,7 +33,7 @@
 import ProductTitle from "@/components/ProductDetail/ProductTitle.vue";
 import ProductImage from "@/components/ProductDetail/ProductImage.vue";
 import ProductFeatures from "@/components/ProductDetail/ProductFeatures.vue";
-import ProductSize from "@/components/ProductDetail/ProductSize.vue";
+import ProductPrice from "@/components/ProductDetail/ProductPrice.vue";
 import ProductReview from "@/components/ProductDetail/ProductReview.vue";
 import CartButton from "@/components/Basket/CartButton.vue";
 import BaseBasket from "../Basket/BaseBasket.vue";
@@ -56,7 +56,7 @@ export default {
     ProductTitle,
     ProductImage,
     ProductFeatures,
-    ProductSize,
+    ProductPrice,
     ProductReview,
     CartButton,
     BaseBasket,
