@@ -1,5 +1,5 @@
 <template>
-  <p class="font-semibold text-huge">{{ price }} TL</p>
+  <p class="font-semibold text-huge">{{ price }} ₺</p>
 </template>
 
 <script>

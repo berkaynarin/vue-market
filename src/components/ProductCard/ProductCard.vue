@@ -42,7 +42,7 @@ export default {
     brand: String,
     name: String,
     description: String,
-    price: String,
+    price: Number,
     productId: Number,
   },
 
