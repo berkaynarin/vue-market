@@ -33,7 +33,7 @@
 import CardImage from "./CardImage.vue";
 import CardDescription from "./CardDescription.vue";
 import CardPrice from "./CardPrice.vue";
-import CartButton from "../Basket/CartButton.vue";
+import CartButton from "@/components/Base/BaseAddToCart.vue";
 import CardLikeIcon from "./CardLikeIcon.vue";
 
 export default {

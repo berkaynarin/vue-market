@@ -34,8 +34,8 @@ import ProductImage from "@/components/ProductDetail/ProductImage.vue";
 import ProductFeatures from "@/components/ProductDetail/ProductFeatures.vue";
 import ProductPrice from "@/components/ProductDetail/ProductPrice.vue";
 import ProductReview from "@/components/ProductDetail/ProductReview.vue";
-import CartButton from "@/components/Basket/CartButton.vue";
-import BaseBasket from "../Basket/BaseBasket.vue";
+import CartButton from "@/components/Base/BaseAddToCart.vue";
+import BaseBasket from "@/components/Base/BaseBasket.vue";
 
 //Services
 import ProductService from "@/services/ProductService.js";

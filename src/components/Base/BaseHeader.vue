@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import BaseBasket from '../Basket/BaseBasket.vue';
+import BaseBasket from '@/components/Base/BaseBasket.vue';
 export default {
   components: { BaseBasket },};
 </script>
