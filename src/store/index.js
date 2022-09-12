@@ -5,15 +5,19 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    basket: {productId: ['1', '2'] , productName: 'Tshirt'},
+    basket: {id: []},
     button: {text: 'Sepete Ekle'}
   },
   getters: {
     productCount: state => {
-      return state.basket.productId.length
+      return state.basket.id.length
     }
   },
-  mutations: {},
+  mutations: {
+    ADD_TO_BASKET(state) {
+      state.basket.id.push('1')
+    }
+  },
   actions: {},
   modules: {},
 });

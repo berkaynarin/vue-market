@@ -2,17 +2,15 @@
   <div>
     <div class="flex justify-around px-10">
       <div class="flex flex-col gap-5 items-center basis-1/5">
-        <ProductTitle :brand="product.title"></ProductTitle>
-        <ProductImage :imgURL="product.image"></ProductImage>
+        <ProductTitle :brand="productDetail.title"></ProductTitle>
+        <ProductImage :imgURL="productDetail.image"></ProductImage>
         <CartButton
-          @product-add-handle="addProduct"
-          @product-remove-handle="removeProduct"
           v-show="onSale"
         ></CartButton>
       </div>
       <div class="flex flex-col gap-4 basis-1/5">
-        <ProductFeatures :materials="product.description" />
-        <ProductPrice :price="product.price" />
+        <ProductFeatures :materials="productDetail.description" />
+        <ProductPrice :price="productDetail.price" />
       </div>
       <div class="flex flex-col justify-between basis-1/5 gap-7">
         <div>
@@ -22,7 +20,7 @@
           />
         </div>
         <div class="flex flex-col items-center">
-          <BaseBasket :cart="cart"></BaseBasket>
+          <BaseBasket />
         </div>
       </div>
     </div>
@@ -30,6 +28,7 @@
 </template>
 
 <script>
+//Components
 import ProductTitle from "@/components/ProductDetail/ProductTitle.vue";
 import ProductImage from "@/components/ProductDetail/ProductImage.vue";
 import ProductFeatures from "@/components/ProductDetail/ProductFeatures.vue";
@@ -38,17 +37,19 @@ import ProductReview from "@/components/ProductDetail/ProductReview.vue";
 import CartButton from "@/components/Basket/CartButton.vue";
 import BaseBasket from "../Basket/BaseBasket.vue";
 
+//Services
 import ProductService from "@/services/ProductService.js";
 
 export default {
   created() {
     ProductService.getProductById(this.$route.params.id)
-      .then((response) => (this.product = response.data))
+      .then((response) => (this.productDetail = response.data))
       .catch((error) => console.log("An error occured: " + error));
+      console.log(this.productDetail)
   },
   data() {
     return {
-      product: [],
+      productDetail: [],
       onSale: true,
     };
   },

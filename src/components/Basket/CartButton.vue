@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     clickButtonHandle() {
-      this.$emit("productAddHandle");
+      this.$store.commit('ADD_TO_BASKET')
       this.isClicked = true;
       this.buttonText = "Sepete Eklendi!";
       setTimeout(() => {

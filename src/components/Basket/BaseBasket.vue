@@ -1,11 +1,12 @@
 <template>
-  <p>Sepet: ({{ cart.length }})</p>
+  <p>Sepet: ({{ productCount }})</p>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
-  props: {
-    cart: Array,
+  computed: {
+    ...mapGetters(["productCount"]),
   },
 };
 </script>
