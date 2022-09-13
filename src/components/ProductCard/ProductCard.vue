@@ -25,7 +25,7 @@
       ></CardDescription>
     </div>
     <CardPrice :price="price"></CardPrice>
-    <cart-button />
+    <CardAddProduct />
   </div>
 </template>
 
@@ -33,7 +33,7 @@
 import CardImage from "./CardImage.vue";
 import CardDescription from "./CardDescription.vue";
 import CardPrice from "./CardPrice.vue";
-import CartButton from "@/components/Base/BaseAddToCart.vue";
+import CardAddProduct from "./CardAddProduct.vue";
 import CardLikeIcon from "./CardLikeIcon.vue";
 
 export default {
@@ -51,7 +51,7 @@ export default {
     CardImage,
     CardDescription,
     CardPrice,
-    CartButton,
+    CardAddProduct,
   },
 };
 </script>

@@ -1,5 +1,6 @@
 <template>
-  <div class="flex flex-col gap-2">
+  <div class="flex gap-2">  
+    <basket-count-selector @basket-product-count = "setBasketCount" />
     <button
       class="p-2.5 w-40 rounded-md text-white text-sm font-medium inline-block"
       :class="[isClicked ? clickedButtonStyle : addButtonStyle]"
@@ -22,18 +23,21 @@
 </template>
 
 <script>
+import BasketCountSelector from '../ProductDetail/BasketCountSelector.vue';
 export default {
+  components: { BasketCountSelector },
   data() {
     return {
       addButtonStyle: "hover:bg-pink-400 bg-pink-500",
       clickedButtonStyle: "bg-green-600",
       buttonText: "Sepete Ekle",
       isClicked: false,
+      productBasketCount: 1
     };
   },
   methods: {
     clickButtonHandle() {
-      this.$store.commit('ADD_TO_BASKET')
+      this.$store.commit('ADD_TO_BASKET', this.createBasketObject)
       this.isClicked = true;
       this.buttonText = "Sepete Eklendi!";
       setTimeout(() => {
@@ -41,8 +45,14 @@ export default {
         this.buttonText = "Sepete Ekle";
       }, 1000);
     },
+    setBasketCount(productCount) {
+      this.productBasketCount = productCount;
+    },
   },
+  computed: {
+    createBasketObject() {
+      return {id: this.$route.params.id, count: this.productBasketCount}
+    }
+  }
 };
 </script>
-
-<style></style>

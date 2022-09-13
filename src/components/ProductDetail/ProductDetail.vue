@@ -4,9 +4,9 @@
       <div class="flex flex-col gap-5 items-center basis-1/5">
         <ProductTitle :brand="productDetail.title"></ProductTitle>
         <ProductImage :imgURL="productDetail.image"></ProductImage>
-        <CartButton
+          <BaseAddToCart
           v-show="onSale"
-        ></CartButton>
+        />     
       </div>
       <div class="flex flex-col gap-4 basis-1/5">
         <ProductFeatures :materials="productDetail.description" />
@@ -34,7 +34,7 @@ import ProductImage from "@/components/ProductDetail/ProductImage.vue";
 import ProductFeatures from "@/components/ProductDetail/ProductFeatures.vue";
 import ProductPrice from "@/components/ProductDetail/ProductPrice.vue";
 import ProductReview from "@/components/ProductDetail/ProductReview.vue";
-import CartButton from "@/components/Base/BaseAddToCart.vue";
+import BaseAddToCart from "@/components/Base/BaseAddToCart.vue";
 import BaseBasket from "@/components/Base/BaseBasket.vue";
 
 //Services
@@ -59,7 +59,7 @@ export default {
     ProductFeatures,
     ProductPrice,
     ProductReview,
-    CartButton,
+    BaseAddToCart,
     BaseBasket,
   },
   methods: {
