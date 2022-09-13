@@ -3,7 +3,7 @@
     <basket-count-selector @basket-product-count = "setBasketCount" />
     <button
       class="p-2.5 w-40 rounded-md text-white text-sm font-medium inline-block"
-      :class="[isClicked ? clickedButtonStyle : addButtonStyle]"
+      :class="isClicked ? clickedButtonStyle : addButtonStyle"
       @click="clickButtonHandle"
     >
       <div class="inline-block mr-2" v-if="isClicked">
@@ -36,17 +36,17 @@ export default {
     };
   },
   methods: {
+    setBasketCount(productCount) {
+      this.productBasketCount = productCount;
+    },
     clickButtonHandle() {
-      this.$store.commit('ADD_TO_BASKET', this.createBasketObject)
       this.isClicked = true;
       this.buttonText = "Sepete Eklendi!";
       setTimeout(() => {
         this.isClicked = false;
         this.buttonText = "Sepete Ekle";
       }, 1000);
-    },
-    setBasketCount(productCount) {
-      this.productBasketCount = productCount;
+      this.$store.commit('ADD_TO_BASKET', this.createBasketObject)
     },
   },
   computed: {
