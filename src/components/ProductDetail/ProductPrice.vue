@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col gap-2">
     <p class="font-semibold">Price:</p>
-    <p class="line-through text-gray-500">{{ price + 2 }} ₺</p>
+    <p class="line-through text-gray-500">{{ price + generateRandomPrice }} ₺</p>
     <p class="text-pink-500 font-semibold text-lg">
-      {{ price }} ₺ <span class="text-black text-base">(Save 2 ₺)</span>
+      {{ price }} ₺ <span class="text-black text-base">(Save {{generateRandomPrice}} ₺)</span>
     </p>
   </div>
 </template>
@@ -13,6 +13,11 @@ export default {
   props: {
     price: { type: Number },
   },
+  computed: {
+    generateRandomPrice() {
+      return parseInt(Math.random() * 10)
+    }
+  }
 };
 </script>
 
