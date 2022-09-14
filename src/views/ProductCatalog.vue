@@ -4,9 +4,9 @@
       <div v-for="product in products" :key="product.id">
         <router-link :to="{ name: 'product', params: { id: product.id } }">
           <ProductCard
-            :cardImageSrc="product.image"
+            :cardImageSrc="product.images[0]"
             :brand="product.title"
-            :name="product.category"
+            :name="product.category.name"
             :description="product.description"
             :price="product.price"
             class="basis-12"

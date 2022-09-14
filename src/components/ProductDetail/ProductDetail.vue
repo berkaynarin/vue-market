@@ -3,7 +3,7 @@
     <div class="flex justify-around px-10">
       <div class="flex flex-col gap-5 items-center basis-1/5">
         <ProductTitle :brand="productDetail.title"></ProductTitle>
-        <ProductImage :imgURL="productDetail.image"></ProductImage>
+        <ProductImage :imgURL="productDetail.images[0]"></ProductImage>
           <BaseAddToCart
           v-show="onSale"
         />     
