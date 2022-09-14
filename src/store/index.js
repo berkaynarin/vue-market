@@ -24,6 +24,10 @@ export default new Vuex.Store({
       });
     },
   },
-  actions: {},
+  actions: {
+    addProduct({ commit }, value) {
+      commit("ADD_TO_BASKET", value);
+    },
+  },
   modules: {},
 });

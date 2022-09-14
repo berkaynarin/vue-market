@@ -46,7 +46,7 @@ export default {
         this.isClicked = false;
         this.buttonText = "Sepete Ekle";
       }, 1000);
-      this.$store.commit('ADD_TO_BASKET', this.createBasketObject)
+      this.$store.dispatch('addProduct', this.createBasketObject)
     },
   },
   computed: {
