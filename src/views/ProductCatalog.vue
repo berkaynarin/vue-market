@@ -16,19 +16,12 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 import ProductCard from "../components/ProductCard/ProductCard.vue";
-import ProductService from "../services/ProductService.js";
 
 export default {
-  data() {
-    return {
-      products: [],
-    };
-  },
   created() {
-    ProductService.getProducts()
-      .then((response) => (this.products = response.data))
-      .catch((error) => console.log(error.response));
+    this.$store.dispatch('fetchProducts')
   },
   methods: {
     handleProductCardClick(path) {
@@ -36,6 +29,9 @@ export default {
     }
   },
   components: { ProductCard },
+  computed: {
+    ...mapState(['products'])
+  },
 };
 </script>
 

@@ -1,12 +1,12 @@
 <template>
-  <p>Sepet: ({{ productCount }})</p>
+  <p>Sepet: ({{ getBasketLength }})</p>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["productCount"]),
+    ...mapGetters(["getBasketLength"]),
   },
 };
 </script>

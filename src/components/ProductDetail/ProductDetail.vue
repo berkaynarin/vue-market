@@ -28,7 +28,6 @@
 </template>
 
 <script>
-//Components
 import ProductTitle from "@/components/ProductDetail/ProductTitle.vue";
 import ProductImage from "@/components/ProductDetail/ProductImage.vue";
 import ProductFeatures from "@/components/ProductDetail/ProductFeatures.vue";
@@ -36,19 +35,14 @@ import ProductPrice from "@/components/ProductDetail/ProductPrice.vue";
 import ProductReview from "@/components/ProductDetail/ProductReview.vue";
 import BaseAddToCart from "@/components/Base/BaseAddToCart.vue";
 import BaseBasket from "@/components/Base/BaseBasket.vue";
-
-//Services
-import ProductService from "@/services/ProductService.js";
+import { mapState } from 'vuex';
 
 export default {
   created() {
-    ProductService.getProductById(this.$route.params.id)
-      .then((response) => (this.productDetail = response.data))
-      .catch((error) => console.log("An error occured: " + error));
+    this.$store.dispatch('fetchProductById', this.$route.params.id)
   },
   data() {
     return {
-      productDetail: [],
       onSale: true,
     };
   },
@@ -61,31 +55,8 @@ export default {
     BaseAddToCart,
     BaseBasket,
   },
-  methods: {
-    updateView(index) {
-      this.selectedProduct = index;
-    },
-    addProduct() {
-      if (this.inventory > 0) {
-        this.cart.push(this.productTypes[this.selectedProduct].id);
-        this.productTypes[this.selectedProduct].productInventory -= 1;
-      }
-    },
-    removeProduct() {
-      if (this.cart > 0) {
-        this.cart.pop(this.productTypes[this.selectedProduct].id);
-        this.productTypes[this.selectedProduct].productInventory += 1;
-      }
-    },
-    addProductReview(anyReview) {
-      this.productTypes[this.selectedProduct].productReview.push(anyReview);
-    },
-    fetchProductFeatures(feature) {
-      for (let i = 0; i < this.productTypes.length; i++) {
-        this.productTypes[i].productFeatures.push(feature[i].title);
-        this.productTypes[i].productImage = feature[i].url;
-      }
-    },
+  computed: {
+    ...mapState(['productDetail'])
   },
 };
 </script>
