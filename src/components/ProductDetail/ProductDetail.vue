@@ -45,7 +45,6 @@ export default {
     ProductService.getProductById(this.$route.params.id)
       .then((response) => (this.productDetail = response.data))
       .catch((error) => console.log("An error occured: " + error));
-      console.log(this.productDetail)
   },
   data() {
     return {
