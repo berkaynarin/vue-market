@@ -6,14 +6,18 @@ const apiClient = axios.create({
 });
 
 export default {
-  getProducts() {
-    return apiClient
-      .get("/products")
-      .catch((error) => console.log("An error occured: " + error));
+  async getProducts() {
+    try {
+      return await apiClient.get("/products");
+    } catch (error) {
+      return console.log("An error occured: " + error);
+    }
   },
-  getProductById(id) {
-    return apiClient
-      .get("/products/" + id)
-      .catch((error) => console.log("An error occured: " + error));
+  async getProductById(id) {
+    try {
+      return await apiClient.get("/products/" + id);
+    } catch (error) {
+      return console.log("An error occured: " + error);
+    }
   },
 };

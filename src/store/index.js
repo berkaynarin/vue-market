@@ -5,17 +5,21 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    products: [],
     basket: [],
     button: { text: "Sepete Ekle" },
   },
   getters: {
     productCount: (state) => {
-      return state.basket;
+      return state.basket.length;
     },
   },
   mutations: {
-    ADD_TO_BASKET(state, basketObject) {
-      state.basket.push(basketObject);
+    GET_PRODUCTS(state, payload) {
+      state.basket = payload;
+    },
+    ADD_TO_BASKET(state, payload) {
+      state.basket.push(payload);
     },
     CHANGE_CARD_BUTTON_TEXT(state) {
       state.button.text = "Sepete Eklendi";
@@ -25,7 +29,7 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    addProduct({ commit }, value) {
+    addProductToBasket({ commit }, value) {
       commit("ADD_TO_BASKET", value);
     },
   },

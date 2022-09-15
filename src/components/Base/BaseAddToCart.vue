@@ -46,7 +46,7 @@ export default {
         this.isClicked = false;
         this.buttonText = "Sepete Ekle";
       }, 1000);
-      this.$store.dispatch('addProduct', this.createBasketObject).then(() => {
+      this.$store.dispatch('addProductToBasket', this.createBasketObject).then(() => {
         console.log("Product with id " + this.$route.params.id + " has added to basket")
       })
     },
