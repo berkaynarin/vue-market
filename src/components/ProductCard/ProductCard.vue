@@ -11,11 +11,12 @@
       p-1.5
       shadow-md
       hover:shadow-2xl
+      cursor-pointer
     "
   >
     <div class="flex flex-row-reverse justify-content-center">
       <CardImage :ImageSrc="cardImageSrc" />
-      <CardLikeIcon />
+      <CardLikeIcon  />
     </div>
     <div>
       <CardDescription

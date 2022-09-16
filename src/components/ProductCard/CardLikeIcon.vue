@@ -1,6 +1,8 @@
 <template>
-  <div class="absolute z-10 pr-3 bg-slate-50 rounded-lg cursor-pointer">
-    <i class="fa-regular fa-heart pl-3 hover:text-pink-600"></i>
+  <div class="absolute z-10 bg-slate-200 rounded-lg cursor-pointer ">
+    <div class="flex justify-center">
+      <v-icon name="heart" />
+    </div>
   </div>
 </template>
 
