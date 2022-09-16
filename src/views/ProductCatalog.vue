@@ -23,8 +23,8 @@ export default {
     this.$store.dispatch('fetchProducts')
   },
   methods: {
-    handleProductCardClick(path) {
-      this.$router.push({name: 'product', params: { id: path }})
+    handleProductCardClick(id) {
+      this.$router.push({name: 'product', params: { id: id }})
     }
   },
   components: { ProductCard },
