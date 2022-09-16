@@ -25,7 +25,7 @@
       ></CardDescription>
     </div>
     <CardPrice :price="price"></CardPrice>
-    <CardAddProduct />
+    <CardAddProduct class="card-add-product" />
   </div>
 </template>
 
@@ -62,5 +62,8 @@ export default {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+}
+.card-add-product {
+  padding-bottom: 0.5rem
 }
 </style>

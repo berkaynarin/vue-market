@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img class="h-40" :src="ImageSrc" />
+    <img class="h-40 rounded-sm" :src="ImageSrc" />
   </div>
 </template>
 

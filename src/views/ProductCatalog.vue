@@ -8,7 +8,6 @@
             :name="product.category.name"
             :description="product.description"
             :price="product.price"
-            class="basis-12"
             @click.native="handleProductCardClick(product.id)" 
           ></ProductCard>
     </div>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-center">
     <p class="text-sm">{{ brand }} {{ name }}</p>
   </div>
 </template>
