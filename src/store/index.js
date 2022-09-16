@@ -12,6 +12,9 @@ export default new Vuex.Store({
     button: { text: "Sepete Ekle" },
   },
   getters: {
+    getProductById: (state) => (payload) => {
+      return state.products.find((product) => product.id === payload);
+    },
     getBasketLength: (state) => {
       return state.basket.length;
     },
@@ -42,10 +45,9 @@ export default new Vuex.Store({
         .then((response) => commit("SET_PRODUCTS", response.data))
         .catch((error) => console.log("An error occured: " + error));
     },
-    fetchProductById({ commit }, payload) {
-      ProductService.getProductById(payload)
-        .then((response) => commit("SET_PRODUCT_DETAIL", response.data))
-        .catch((error) => console.log("An error occured: " + error));
+    fetchProductById({ commit, getters }, payload) {
+      const filteredProduct = getters.getProductById(payload);
+      commit("SET_PRODUCT_DETAIL", filteredProduct);
     },
   },
   modules: {},
