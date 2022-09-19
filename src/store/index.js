@@ -1,15 +1,18 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import ProductService from "../services/ProductService";
+import * as button from "./modules/button.js";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  modules: {
+    button,
+  },
   state: {
     products: [],
     productDetail: [],
     basket: [],
-    button: { text: "Sepete Ekle" },
   },
   getters: {
     getProductById: (state) => (payload) => {
@@ -50,5 +53,4 @@ export default new Vuex.Store({
       commit("SET_PRODUCT_DETAIL", filteredProduct);
     },
   },
-  modules: {},
 });
