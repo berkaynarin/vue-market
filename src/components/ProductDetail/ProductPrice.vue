@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col gap-2">
     <p class="font-semibold">Price:</p>
-    <p class="line-through text-gray-500">{{ price + generateRandomPrice }} ₺</p>
+    <p v-if="generateRandomPrice > 0" class="line-through text-gray-500">{{ price + generateRandomPrice }} ₺</p>
     <p class="text-pink-500 font-semibold text-lg">
-      {{ price }} ₺ <span class="text-black text-base">(Save {{generateRandomPrice}} ₺)</span>
+      {{ price }} ₺ <span v-if="generateRandomPrice > 0" class="text-black text-base">(Save {{generateRandomPrice}} ₺)</span>
     </p>
   </div>
 </template>
